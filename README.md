@@ -18,7 +18,9 @@ HTML5, CSS3, AngularJS, Express, NodeJS
 
 ## Quickstart
 
-[Download](https://github.com/antonio-rodrigues/crc.git) the solution.
-Setup with 'npm install -g gulp & npm install'
-Run 'gulp serve' or "gulp serve:dist'
+[Clone](https://github.com/antonio-rodrigues/crc.git) the solution: git clone https://github.com/antonio-rodrigues/crc.git.
+
+Setup with `npm install -g gulp & npm install`
+
+Run `gulp serve` or `gulp serve:dist`
 
