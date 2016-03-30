@@ -1,0 +1,52 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+
+    <br />
+    <br />
+
+
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <h4 class="mdl-cell mdl-cell--12-col">
+        {{ appSettings.title }}
+      </h4>
+      
+      <br/><br/><br/>
+      
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <img src="images/bp-logo.jpg" alt="BdP Logotipo" width="68" height="68">
+      </div>
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Comunicação com BdP</h5>
+        <p>Esta aplicação permite a comunicação de ficheiros de XML com o BdP no âmbito da Central de Responsabilidades de Crédito, incluíndo:</p>
+        <ul class="files-list-icon mdl-list">
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">playlist_add_check</i>
+                  Envio de novos Devedores
+                </span>
+          </li>
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">account_balance_wallet</i>
+                  Envio de Saldos de devedores
+                </span>
+          </li>
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                  <i class="material-icons mdl-list__item-icon">call_split</i>
+                  Recepção e disseminação regular de Saldos Centralizados
+                </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mdl-card__actions">
+      <a href="#faq" class="mdl-button">
+            Dúvidas? Clique aqui</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <hr>CRC-BdP // version: {{ appSettings.version }}</footer>

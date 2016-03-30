@@ -1,0 +1,2 @@
+cls
+gulp serve:dist

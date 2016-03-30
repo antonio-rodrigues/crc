@@ -1,0 +1,25 @@
+{
+  "version": "0.1.8",
+  "name": "CRC",
+  "launch_path": "/index.html",
+  "description": "Comunicação de ficheiros de XML com o BdP no âmbito da Central de Responsabilidades de Crédito",
+  "icons": {
+    "128": "/images/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "AROD",
+    "url": "https://makerslate.io/antonio-rodrigues"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "CRC",
+      "description": "comunicação de ficheiros de XML com o BdP no âmbito da Central de Responsabilidades de Crédito"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col mdl-container">
+  
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <h4>{{ page.title }}</h4>
+        
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" ng-model="filesFilter.xmlFileName" id="filter-rows">
+          <label class="mdl-textfield__label" for="filter-rows">Filter...</label>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--12-col">
+
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th ng-click="doSort('xmlFileDate')" class="mdl-data-table__cell--non-numeric">Date</th>
+              <th ng-click="doSort('xmlFileName')" class="mdl-data-table__cell--non-numeric">Filename</th>
+              <th ng-click="doSort('xmlFileSequence')">Sequence</th>
+              <th ng-click="doSort('xmlFileDownloaded')" class="mdl-data-table__cell--non-numeric">Downloaded</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="file in Files | filter:filesFilter | orderBy:sortBy:reverse">
+              <td class="mdl-data-table__cell--non-numeric">{{ file.xmlFileDate }}</td>
+              <td class="mdl-data-table__cell--non-numeric">{{ file.xmlFileName }}</td>
+              <td>{{ file.xmlFileSequence }}</td>
+              <td class="mdl-data-table__cell--non-numeric mdl-data-table__cell-centered"><span ng-bind-html="file.xmlFileDownloaded | true_false_icon"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+    <br />
+
+    <span>Total files: {{ Files.length }}</span>
+    <br />
+    <br />
+
+  </div>
+</section>
+<footer><hr />CRC-BdP // version: {{ appSettings.version }}</footer>

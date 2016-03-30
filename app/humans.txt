@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  AROD -- Author -- @_arodrigues_
+
+# THANKS
+
+  PSOUSA
+  RALVES
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3, AngularJS, Express, NodeJS, MDL
