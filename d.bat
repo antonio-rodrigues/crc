@@ -1,2 +1,0 @@
-cls
-gulp serve:dist
