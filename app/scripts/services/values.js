@@ -1,7 +1,7 @@
 angular.module('CrcApp')
   .constant('appSettings', {
     title: 'CRC – Central de Risco de Crédito',
-    version: '0.1.9',
+    version: '0.1.12',
     api: {
       url: 'http://localhost:8080',
       googleCloudKey: 'AIzaSyCp4id0AWX6GJWzXYHFuu3feBiiM7KXGc8',
