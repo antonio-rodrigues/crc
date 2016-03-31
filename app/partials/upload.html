@@ -1,0 +1,43 @@
+<h5 class="upl-title">Upload new file</h5>
+
+<div class="mdl-grid mdl-grid__full">
+  <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="file" name="file" id="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="seq" id="seq">
+      <label class="mdl-textfield__label" for="seq">Sequence</label>
+      <span class="mdl-textfield__error">Input is not a number!</span>
+    </div>
+  </div>
+</div>
+<div class="mdl-grid mdl-grid__full">
+  <div class="mdl-cell mdl-cell--12-col">Tipo:</div>
+  <div class="mdl-cell mdl-cell--12-col">
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="type1">
+      <input class="mdl-radio__button" id="type1" name="fileType" type="radio" ng-checked="radioOnOff('dev')">
+      <span class="mdl-radio__label">Envio Novos Devedores</span>
+    </label>
+    <br />
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="type2">
+      <input class="mdl-radio__button" id="type2" name="fileType" type="radio" ng-checked="radioOnOff('sld')">
+      <span class="mdl-radio__label">Envio Saldos</span>
+    </label>
+    <br />
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="type3">
+      <input class="mdl-radio__button" id="type3" name="fileType" type="radio" ng-checked="radioOnOff('resp')">
+      <span class="mdl-radio__label">Recepção Saldos Centralizados</span>
+    </label>
+  </div>
+</div>
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <div class="ngdialog-buttons">
+      <button type="button" class="ngdialog-button ngdialog-button-primary ngdialog-button__left" ng-click="upload()">Upload</button>
+    </div>
+  </div>
+</div>

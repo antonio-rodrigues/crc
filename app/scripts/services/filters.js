@@ -18,7 +18,7 @@
     }
     
   };
-  
+
   trueIconFilter.$inject = ['$sce'];
   
   angular.module('CrcApp')
