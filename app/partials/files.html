@@ -1,10 +1,10 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-container">
-  
+
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col">
         <h4>{{ page.title }}</h4>
-        
+
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" ng-model="filesFilter.xmlFileName" id="filter-rows">
           <label class="mdl-textfield__label" for="filter-rows">Filter...</label>
@@ -12,7 +12,26 @@
       </div>
       <div class="mdl-cell mdl-cell--12-col">
 
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+
+        <at-pagination at-list="Files" at-config="config"></at-pagination>
+
+        <table class="mdl-data-table mdl-data-table__full mdl-js-data-table mdl-shadow--2dp" at-table at-config="config" at-list="Files">
+          <thead></thead>
+          <tbody>
+            <tr>
+              <td at-attribute="xmlFileDate" at-sortable at-initial-sorting="desc">{{item.xmlFileDate.substring(0, 10)}}</td>
+              <td at-implicit at-attribute="xmlFileName"></td>
+              <td at-implicit at-attribute="xmlFileSequence"></td>
+              <td at-implicit at-attribute="xmlFileDownloaded"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br />
+        <br />
+        <br />
+
+        <table class="mdl-data-table mdl-data-table__full mdl-js-data-table mdl-shadow--2dp">
           <thead>
             <tr>
               <th ng-click="doSort('xmlFileDate')" class="mdl-data-table__cell--non-numeric">Date</th>
@@ -27,7 +46,7 @@
               <td class="mdl-data-table__cell--non-numeric">{{ file.xmlFileName }}</td>
               <td>{{ file.xmlFileSequence }}</td>
               <td class="mdl-data-table__cell--non-numeric mdl-data-table__cell-centered"><span ng-bind-html="file.xmlFileDownloaded | true_false_icon"></span></td>
-          </tr>
+            </tr>
           </tbody>
         </table>
 
@@ -42,4 +61,4 @@
 
   </div>
 </section>
-<footer><hr />CRC-BdP // version: {{ appSettings.version }}</footer>
+<footer><small>Version: {{ appSettings.version }}</small></footer>

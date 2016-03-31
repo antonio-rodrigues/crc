@@ -1,7 +1,7 @@
 (function () {
   // 'use strict';
 
-  var app = angular.module('CrcApp', ['ngRoute', 'ngDialog']);
+  var app = angular.module('CrcApp', ['ngRoute', 'ngDialog','angular-table']);
 
   app.config(function($routeProvider) {
     $routeProvider
