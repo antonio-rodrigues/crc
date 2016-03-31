@@ -3,6 +3,12 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.b1 {border: 1px solid red;}
+.b2 {border: 1px solid green;}
+.b3 {border: 1px solid blue;}
+.b4 {border: 1px solid pink;}
+
 .mdl-container {
   padding: 20px;
 }
@@ -33,3 +39,15 @@ html, body {
   font-size: 14px;
   text-align: center;
 }
+
+.mdl-grid__full {
+  width: 100%;
+}
+.ngdialog-button__left {
+  float: left;
+}
+.upl-title {
+  margin: 0;
+  padding: 6px;
+}
+
