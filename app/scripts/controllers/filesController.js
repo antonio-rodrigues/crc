@@ -7,25 +7,22 @@
     var fileId = $routeParams.fileId || null;
     console.log('fileType: ' + fileType);
 
+    $scope.fileType = fileType.toUpperCase();
     $scope.sortBy = 'name';
     $scope.reverse = false;
-    $scope.Files = [];
     $scope.appSettings = appSettings;
     $scope.page = {
-      title: appSettings.filemap[fileType.toUpperCase()]
+      title: appSettings.filemap[fileType.toUpperCase()],
+      itemsPerPage: 5
     };
     
-    // https://github.com/samu/angular-table
-    $scope.config = {
-      itemsPerPage: 5,
-      fillLastPage: true
-    };
-
+    $scope.xmlfiles = [];
+    
     function init() {
       //Favor then() insteadOf deprecated success()
       filesFactory.getFiles(fileType.toUpperCase())
         .then(function(response) {
-          $scope.Files = response.data;
+          $scope.xmlfiles = response.data;
         }, function(data, status, headers, config) {
           $log.log(data.error + ' ' + status);
         });

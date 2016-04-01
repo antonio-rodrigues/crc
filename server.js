@@ -1,18 +1,18 @@
 var express = require('express'),
-    app = express();
+  app = express();
 
-//Express 3
+// [If using] Express 3
 //app.configure(function() {
 //    app.use(express.static(__dirname, '/'));
 //});
 
-//Express 4
+// Express 4
 app.use(express.static(__dirname + '/'));
 
-//CORS handling
+// CORS handling
 allowCrossDomain = function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS,RANGE');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   if ('OPTIONS' === req.method) {
     res.send(200);
@@ -27,7 +27,7 @@ app.use(allowCrossDomain);
 app.get('/files/:fileType', function (req, res) {
   var fileType = req.params.fileType.toString().toUpperCase();
   var e = formatDate(new Date());
-  console.dir('['+ e +']  ' + fileType + ' files requested.');
+  console.dir('[' + e + ']  ' + fileType + ' files requested.');
   res.json(files[fileType]);
   //res.json(500, { error: 'An error has occurred!' });
 });
@@ -37,22 +37,21 @@ app.get('/files/:fileType', function (req, res) {
 app.get('/files/:fileType/:fileId', function (req, res) {
   var fileType = req.params.fileType.toString().toUpperCase();
   var fileId = req.params.fileId;
-  var data = {};
-
+  var items = {};
   files[fileType].forEach(function (f) {
-    //console.log('xmlFileName:', f.xmlFileName);
     if (f.xmlFileName === fileId) {
-      data = f;
+      items = f;
     }
   });
-
-  res.json(data);
+  res.json(items);
 });
 
 
 app.listen(8080);
 
 console.log('Express listening on port 8080');
+
+
 
 
 //Mockup data
@@ -105,7 +104,103 @@ var filesDev = [
     "xmlFileType": "DEV",
     "xmlFileSequence": "553",
     "xmlFileDownloaded": "true"
-  }
+  },
+  {
+    "xmlFileDate": "2016-01-01 05:32:44",
+    "xmlFileName": "CRC.0063.20160101001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/011",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "011",
+    "xmlFileDownloaded": "true"
+  },
+  {
+    "xmlFileDate": "2016-04-01 05:32:44",
+    "xmlFileName": "CRC.0063.20160401001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/641",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "641",
+    "xmlFileDownloaded": "false"
+  },
+  {
+    "xmlFileDate": "2016-01-11 05:32:44",
+    "xmlFileName": "CRC.0063.20160111001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/111",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "111",
+    "xmlFileDownloaded": "false"
+  },
+  {
+    "xmlFileDate": "2016-02-03 05:32:44",
+    "xmlFileName": "CRC.0063.20160203001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/023",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "023",
+    "xmlFileDownloaded": "false"
+  },
+  {
+    "xmlFileDate": "2016-02-02 05:32:44",
+    "xmlFileName": "CRC.0063.20160202001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/202",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "202",
+    "xmlFileDownloaded": "true"
+  },
+  {
+    "xmlFileDate": "2016-01-26 05:32:44",
+    "xmlFileName": "CRC.0063.20160126001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/126",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "126",
+    "xmlFileDownloaded": "true"
+  },
+  {
+    "xmlFileDate": "2016-04-01 05:32:44",
+    "xmlFileName": "CRC.0063.20160401001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/401",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "401",
+    "xmlFileDownloaded": "false"
+  },
+  {
+    "xmlFileDate": "2016-03-01 05:32:44",
+    "xmlFileName": "CRC.0063.20160301001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/301",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "301",
+    "xmlFileDownloaded": "true"
+  },
+  {
+    "xmlFileDate": "2016-01-15 05:32:44",
+    "xmlFileName": "CRC.0063.20160115001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/015",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "015",
+    "xmlFileDownloaded": "false"
+  },
+  {
+    "xmlFileDate": "2016-04-23 05:32:44",
+    "xmlFileName": "CRC.0063.20160404001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/604",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "604",
+    "xmlFileDownloaded": "false"
+  },
+  {
+    "xmlFileDate": "2016-03-23 05:32:44",
+    "xmlFileName": "CRC.0063.20160304001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/603",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "603",
+    "xmlFileDownloaded": "true"
+  },
+  {
+    "xmlFileDate": "2016-02-23 05:32:44",
+    "xmlFileName": "CRC.0063.20160204001.CSLD.20151023.553001.xml",
+    "xmlFilePath": "/files/get/602",
+    "xmlFileType": "DEV",
+    "xmlFileSequence": "602",
+    "xmlFileDownloaded": "false"
+  },
 ];
 
 var filesSld = [
@@ -125,6 +220,24 @@ var filesSld = [
     "xmlFileType": "SLD",
     "xmlFileSequence": "222",
     "xmlFileDownloaded": "true",
+    "display": "true"
+  },
+  {
+  "xmlFileDate": "2016-01-03 11:23:36",
+  "xmlFileName": "CRC.0063.20160103001.CSLD.20151001.786001.xml",
+  "xmlFilePath": "/files/get/224",
+  "xmlFileType": "SLD",
+  "xmlFileSequence": "224",
+  "xmlFileDownloaded": "false",
+  "display": "true"
+  },
+  {
+    "xmlFileDate": "2016-02-15 11:23:36",
+    "xmlFileName": "CRC.0063.20160215001.CSLD.20151001.786001.xml",
+    "xmlFilePath": "/files/get/215",
+    "xmlFileType": "SLD",
+    "xmlFileSequence": "215",
+    "xmlFileDownloaded": "false",
     "display": "true"
   }
 ];
@@ -162,7 +275,7 @@ function formatDate(date) {
   var ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
   var strTime = hours + ':' + minutes + ' ' + ampm;
-  return date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+  return date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
 }
