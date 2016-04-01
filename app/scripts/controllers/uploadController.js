@@ -43,16 +43,18 @@
     };
 
     $scope.upload = function () {
-      filesFactory.uploadFile(fileType.toUpperCase(), file)
+      alert('Test version: not implemented.');
+      /*filesFactory.uploadFile(fileType.toUpperCase(), file)
         .then(function (response) {
           $scope.Files = response.data;
         }, function (data, status, headers, config) {
           $log.log(data.error + ' ' + status);
-        });
-    }
+        });*/
+    };
 
   };
 
+  // TODO: implement ng-annotate (and save a bunch of typing!)
   uploadController.$inject = ['$scope', '$routeParams', '$log', 'filesFactory', 'ngDialog', 'appSettings'];
 
   angular.module('CrcApp')

@@ -1,7 +1,7 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
   <div class="mdl-card mdl-cell mdl-cell--12-col mdl-container">
     
-    <h4>{{ page.title }}</h4>
+    <h4>{{ vm.page.title }}</h4>
     
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col">
@@ -22,11 +22,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr dir-paginate="file in xmlfiles | filter:filesFilter | orderBy:sortBy:reverse | itemsPerPage: appSettings.table.itemsPerPage">
-              <td class="mdl-data-table__cell--non-numeric">{{ file.xmlFileDate }}</td>
-              <td class="mdl-data-table__cell--non-numeric">{{ file.xmlFileName }}</td>
-              <td>{{ file.xmlFileSequence }}</td>
-              <td class="mdl-data-table__cell--non-numeric mdl-data-table__cell-centered"><span ng-bind-html="file.xmlFileDownloaded | true_false_icon"></span></td>
+            <tr dir-paginate="f in vm.xmlfiles | filter:filesFilter | orderBy:sortBy:reverse | itemsPerPage: vm.appSettings.table.itemsPerPage">
+              <td class="mdl-data-table__cell--non-numeric">{{ f.xmlFileDate }}</td>
+              <td class="mdl-data-table__cell--non-numeric">{{ f.xmlFileName }}</td>
+              <td>{{ f.xmlFileSequence }}</td>
+              <td class="mdl-data-table__cell--non-numeric mdl-data-table__cell-centered"><span ng-bind-html="f.xmlFileDownloaded | true_false_icon"></span></td>
             </tr>
           </tbody>
         </table>
@@ -34,18 +34,11 @@
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--12-col">
             <dir-pagination-controls></dir-pagination-controls>
-            <small class="pagination__count">Record count: {{ xmlfiles.length }}</small>
+            <small class="pagination__count">Record count: {{ vm.xmlfiles.length }}</small>
           </div>
         </div>
         
     </div>
-
-    <br />
-
-    
-    <br />
-    <br />
-
   </div>
 </section>
-<footer><small>Version: {{ appSettings.version }}</small></footer>
+<footer><small>Version: {{ vm.appSettings.version }}</small></footer>

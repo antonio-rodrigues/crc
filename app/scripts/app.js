@@ -11,16 +11,20 @@
   app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
+        templateUrl: '../partials/home.html',
         controller: 'homeController',
-        templateUrl: '../partials/home.html'
+        controllerAs: 'home'
       })
       .when('/files/:fileType', {
+        templateUrl: '../partials/files.html',
         controller: 'filesController',
-        templateUrl: '../partials/files.html'
+        controllerAs: 'vm'
+        // TODO: implement myCtrl.resolve
       })
       .when('/file/:fileId', {
+        templateUrl: '../partials/file.html',
         controller: 'filesController',
-        templateUrl: '../partials/file.html'
+        controllerAs: 'f'
       })
       .when('/faq', {
         templateUrl: '../partials/faq.html'
