@@ -16,10 +16,10 @@ Frontend app to manage CRC send & receive files to and from BdP, via RESTfull AP
 HTML5, CSS3, AngularJS, Express, NodeJS
 
 
-## Dependencias
+## Dependencies
 
-* [Clone](https://github.com/samu/angular-table) angular-table
-* [Clone](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination) angular-utils-pagination
+* [angular-table](https://github.com/samu/angular-table)
+* [angular-utils-pagination](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
 
 
 ## Quickstart
