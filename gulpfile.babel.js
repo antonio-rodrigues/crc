@@ -25,8 +25,7 @@ const reload = browserSync.reload;
 // Lint JavaScript
 gulp.task('lint', () =>
   gulp.src([
-    'app/scripts/**/*.js',
-    '!app/scripts/vendor/*'
+    'app/scripts/*.js'
   ])
   .pipe($.eslint())
   .pipe($.eslint.format())
@@ -105,12 +104,21 @@ gulp.task('scripts', () =>
       //       to be correctly concatenated
       './app/scripts/main.js',
       './app/scripts/app.js',
+      './app/scripts/mdl-hack.js',
       './app/scripts/controllers/filesController.js',
       './app/scripts/controllers/homeController.js',
+      './app/scripts/controllers/uploadController.js',
+      './app/scripts/services/directives.js',
       './app/scripts/services/filesFactory.js',
+      './app/scripts/services/filters.js',
       './app/scripts/services/values.js',
-      './app/scripts/services/filters.js'
-      // Other scripts
+      './app/scripts/vendor/at-table/angular-table.js',
+      './app/scripts/vendor/ng-dialog/ngDialog.js',
+      './app/scripts/vendor/offline/offline.js',
+      './app/scripts/vendor/angular.js',
+      './app/scripts/vendor/angular-resource.js',
+      './app/scripts/vendor/angular-route.js'
+  // Other scripts
     ])
   .pipe($.newer('.tmp/scripts'))
   .pipe($.sourcemaps.init())

@@ -1,9 +1,14 @@
 (function () {
   // 'use strict';
 
-  var app = angular.module('CrcApp', ['ngRoute', 'ngDialog','angular-table']);
+  var app = angular.module('CrcApp', [
+    'ngRoute',
+    'ngDialog',
+    'angular-table',
+    'angularUtils.directives.dirPagination'
+  ]);
 
-  app.config(function($routeProvider) {
+  app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         controller: 'homeController',
