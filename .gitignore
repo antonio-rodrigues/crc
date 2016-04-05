@@ -2,6 +2,7 @@ node_modules
 _files
 dist/
 .tmp
+*.bat
 app.yaml
 server/files/
 server/ssl/
