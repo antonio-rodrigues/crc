@@ -18,9 +18,23 @@ import {
 from 'psi';
 import pkg from './package.json';
 import compress from 'compression';
+import webdriver from 'gulp-webdriver';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+// webdriver.io
+/*gulp.task('test:e2e', function() {
+  return gulp.src('webdriverio-test/wdio.conf.js').pipe(webdriver());
+})*/
+gulp.task('test:e2e', function() {
+  return gulp.src('webdriverio-test/wdio.conf.js').pipe(webdriver({
+    logLevel: 'verbose',
+    waitforTimeout: 10000,
+    reporter: 'spec'
+  }));
+});
+
 
 // Lint JavaScript
 gulp.task('lint', () =>
@@ -182,6 +196,7 @@ gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {
 }));
 
 // Watch files for changes & reload
+//gulp.task('serve', ['scripts', 'styles', 'test:e2e'], () => {
 gulp.task('serve', ['scripts', 'styles'], () => {
   browserSync({
     notify: false,
