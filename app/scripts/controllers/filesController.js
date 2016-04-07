@@ -4,8 +4,14 @@
   var filesController = function ($scope, $routeParams, $log, filesFactory, appSettings) {
 
     var vm = this;
-
-    var fileType = $routeParams.fileType || 'DEV';
+    
+    var fileType = function () {
+      if ($routeParams.fileType === null)
+        return 'DEV';
+      else 
+        return $routeParams.fileType.toString().toUpperCase();
+    }();
+    
     var fileId = $routeParams.fileId || null;
     console.log('fileType: ' + fileType);
 
@@ -14,7 +20,7 @@
     vm.reverse = false;
     vm.appSettings = appSettings;
     vm.page = {
-      title: appSettings.filemap[fileType.toUpperCase()],
+      title: appSettings.filemap[fileType],
       itemsPerPage: 5
     };
 
@@ -29,7 +35,7 @@
           $log.log(data.error + ' ' + status);
         });
     }
-
+    
     init();
 
     $scope.doSort = function (propName) {

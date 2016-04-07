@@ -126,12 +126,16 @@ gulp.task('scripts', () =>
       './app/scripts/services/filesFactory.js',
       './app/scripts/services/filters.js',
       './app/scripts/services/values.js',
+      './app/scripts/components/fileList.js',
+      './app/scripts/components/fileDetail.js',
       './app/scripts/vendor/at-table/angular-table.js',
       './app/scripts/vendor/ng-dialog/ngDialog.js',
       './app/scripts/vendor/offline/offline.js',
       './app/scripts/vendor/angular.js',
+      './app/scripts/vendor/i18n/angular-locale_pt-pt.js',
       './app/scripts/vendor/angular-resource.js',
-      './app/scripts/vendor/angular-route.js'
+      './app/scripts/vendor/angular-route.js',
+      './app/scripts/vendor/ui-router/angular-ui-router.js'
   // Other scripts
     ])
   .pipe($.newer('.tmp/scripts'))

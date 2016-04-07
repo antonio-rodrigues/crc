@@ -1,0 +1,11 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col">
+    {{$ctrl.hero.xmlFileSequence}}
+  </div>
+  <div class="mdl-cell mdl-cell--7-col">
+    {{$ctrl.hero.xmlFileName}}
+  </div>
+  <div class="mdl-cell mdl-cell--3-col">
+    <button class="mdl-button mdl-js-button mdl-button--accent" ng-click="$ctrl.onDelete({hero: $ctrl.hero})">Delete</button>
+  </div>
+</div>
